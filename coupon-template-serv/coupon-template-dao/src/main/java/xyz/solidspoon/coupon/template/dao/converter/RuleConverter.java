@@ -1,7 +1,7 @@
 package xyz.solidspoon.coupon.template.dao.converter;
 
 import com.alibaba.fastjson.JSON;
-import com.geekbang.coupon.template.api.beans.rules.TemplateRule;
+import xyz.solidspoon.coupon.template.api.beans.rules.TemplateRule;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
