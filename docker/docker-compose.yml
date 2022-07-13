@@ -39,7 +39,7 @@ services:
   #      - "6379:6379"
   nacos:
     image: nacos/nacos-server:v2.1.0
-    container_name: nacos-standalone-mysql
+    container_name: nacos
     env_file:
       - ./Nacos/nacos-standlone-mysql.env
     volumes:
