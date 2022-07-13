@@ -43,6 +43,22 @@ services:
       - "./redis/config/redis.conf:/etc/redis/redis.conf"  # `redis.conf`文件内容`http://download.redis.io/redis-stable/redis.conf`
   #    ports: # 映射端口
   #      - "6379:6379"
+  nacos:
+    image: nacos/nacos-server:v2.1.0
+    container_name: nacos-standalone-mysql
+    env_file:
+      - ./Nacos/nacos-standlone-mysql.env
+    volumes:
+      - ./standalone-logs/:/home/nacos/logs
+      - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
+    ports:
+      - "8848:8848"
+      - "9848:9848"
+      - "9555:9555"
+    depends_on:
+      - mysql
+    restart: always
+
 volumes:
   rabbitmq:
     driver: local
