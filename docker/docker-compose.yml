@@ -38,7 +38,7 @@ services:
   #    ports: # 映射端口
   #      - "6379:6379"
   nacos:
-    image: nacos/nacos-server:v2.1.0
+    image: nacos/nacos-server:v2.1.0-slim
     container_name: nacos
     env_file:
       - ./Nacos/nacos-standlone-mysql.env
@@ -51,7 +51,6 @@ services:
       - "9555:9555"
     depends_on:
       - mysql
-    restart: always
 
 volumes:
   rabbitmq:
