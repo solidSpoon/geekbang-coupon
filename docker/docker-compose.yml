@@ -14,6 +14,7 @@ services:
     ports:                              # 映射端口
       - "3306:3306"
   rabbitmq:
+    container_name: rabbitmq
     image: rabbitmq:3.10.6-management        # 原镜像`rabbitmq:3.7.8-management` 【 注：该版本包含了web控制页面 】
     environment:
       RABBITMQ_DEFAULT_USER: admin
@@ -43,8 +44,8 @@ services:
     env_file:
       - ./Nacos/nacos-standlone-mysql.env
     volumes:
-      - ./standalone-logs/:/home/nacos/logs
-      - ./init.d/custom.properties:/home/nacos/init.d/custom.properties
+      - ./Nacos/standalone-logs/:/home/nacos/logs
+      - ./Nacos/init.d/custom.properties:/home/nacos/init.d/custom.properties
     ports:
       - "8848:8848"
       - "9848:9848"
